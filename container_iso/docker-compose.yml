@@ -1,0 +1,27 @@
+# Version de Docker Compose
+version: '3.9'
+
+# Définition des services (conteneurs) à créer
+services:
+  # Premier service (conteneur) nommé "container1"
+  container1:
+    build: . # Construit l'image Docker à partir du fichier Dockerfile du répertoire courant (.)
+    image: write-to-file # Nom de l'image Docker à utiliser
+    environment: # Variables d'environnement pour le conteneur
+      - CONTAINER_NAME=Container_1 # Nom du conteneur
+    volumes: # Montage des volumes
+      - output1:/output # Montage du volume "output1" sur le répertoire "/output" du conteneur
+
+  # Second service (conteneur) nommé "container2"
+  container2:
+    build: . # Construit l'image Docker à partir du fichier Dockerfile du répertoire courant (.)
+    image: write-to-file # Nom de l'image Docker à utiliser
+    environment: # Variables d'environnement pour le conteneur
+      - CONTAINER_NAME=Container_2 # Nom du conteneur
+    volumes: # Montage des volumes
+      - output2:/output # Montage du volume "output2" sur le répertoire "/output" du conteneur
+
+# Définition des volumes à créer et utiliser
+volumes:
+  output1: # Nom du premier volume
+  output2: # Nom du second volume
