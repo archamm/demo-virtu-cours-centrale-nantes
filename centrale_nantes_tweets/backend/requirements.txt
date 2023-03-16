@@ -1,0 +1,7 @@
+Django==3.2.10
+djangorestframework==3.12.4
+tweepy==4.4.0
+twint
+nest_asyncio
+requests
+django-cors-headers
