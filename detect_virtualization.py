@@ -7,7 +7,7 @@ def detect_virtualization():
     machine = platform.machine()
     processor = platform.processor()
     
-    if "Debian" in platform.platform() or "vbox" in platform.platform().lower() or "xen" in platform.platform().lower() or "kvm" in platform.platform().lower():
+    if "Linux" in platform.platform() or "vbox" in platform.platform().lower() or "xen" in platform.platform().lower() or "kvm" in platform.platform().lower():
         virtualization = "Yes"
     else:
         virtualization = "No"
